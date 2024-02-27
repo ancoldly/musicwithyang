@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music with Yang Yang</title>
+    <link rel="stylesheet" href="./css/app.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Reenie+Beanie&family=Work+Sans:wght@300;400;600;700&display=swap"
+    rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="icon" href="./image/icon.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/scroll_bar.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        reenieFonts: ["Reenie Beanie", "Sans-serif"]
+                    }
+                },
+            }
+        }
+
+    </script>
+</head>
+<body class="bg-cover bg-no-repeat max-sm:overflow-x-hidden">
+    <div class="fixed right-[50px] top-[60%] flex gap-[10px] items-center cursor-pointer max-sm:hidden">
+        <h1 class="text-white font-medium">Music by - </h1>
+        <img src="https://i.ibb.co/pfHfDR6/salad.png" alt="" class="hover:scale-[1.1]">
+    </div>
+
+    <a href="./newyear.html">
+        <div class="fixed right-[50px] top-[50px] flex gap-[10px] items-center cursor-pointer max-sm:hidden">
+            <img src="./image/logo_tet.png" class="h-[150px] rounded-full animate-border" alt="">
+        </div>
+    </a>
+
+    <a href="https://www.facebook.com/profile.php?id=100016676058653">
+        <div class="fixed left-[50px] top-[50px] flex gap-[10px] items-center cursor-pointer">
+            <div class="border-[2px] border-blue-500 p-[5px] rounded-full flex items-center justify-center">
+                <img src="./image/jang.jpg" class="rounded-full w-[60px] h-[60px]" alt="">
+            </div>
+
+            <div>
+                <h1 class="text-white font-medium">Yang Yang</h1>
+                <div class="flex items-center text-white gap-[5px]">
+                    <span>Instagram:</span>
+                    <p>yangyang_2106</p>
+                </div>
+            </div>
+        </div>
+    </a>
+
+    <div class="fixed top-[300px] right-[50px] cursor-pointer max-sm:hidden">
+        <img src="./image/gif.gif" alt="" class="h-[100px] w-[100px] rounded-full">
+    </div>
+
+    <main>
+        <div class="grid items-center justify-center max-sm:py-[150px] max-sm:gap-[10px] py-[300px] gap-[30px] cursor-pointer max-sm:text-center">
+            <div class="flex items-center gap-[50px] max-sm:grid max-sm:gap-[10px]">
+                <div>
+                    <h1 class="text-[24px] font-medium text-white" id="scrolling">Hello Yang Yang 🌇</h1>
+        
+                    <p class="font-medium text-white text-[18px]" id="currentDate"></p>
+                </div>
+    
+                <h1 class="text-[20px] font-medium text-white currentTime"></h1>
+            </div>
+
+            <p class="text-white font-medium">"Sad today, but tomorrow is a new opportunity."</p>
+        </div>
+
+        <div class="animate-border flex items-center cursor-pointer justify-between w-[450px] max-sm:w-[320px] p-[10px] rounded-[10px] fixed top-[500px] max-sm:top-[350px] left-[50px] text-white bg-slate-700 mx-auto">
+            <div class="flex items-center gap-[10px] max-sm:grid">
+                <div class="border-[2px] border-blue-500 p-[5px] flex items-center justify-center rounded-full max-sm:w-max">
+                    <img src="" alt="" class="w-[60px] h-[60px] rounded-full" id="image-music">
+                </div>
+                <div class="grid justify-center">
+                    <h1 class="font-medium text-[18px]" id="name-music"></h1>
+                    <div class="flex items-center gap-[5px]">
+                        <p id="time-music"></p>
+                        <p>/</p>
+                        <p id="time-start-music"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <img src="./image/opp.gif" alt="" class="w-[50px] rounded-[10px]">
+            </div>
+        </div>
+
+        <div class="w-full justify-center items-center hidden cog-backgroud">
+            <div class="bg-slate-700 w-[400px] max-sm:w-[350px] h-[600px] absolute top-[100px] rounded-[10px] grid">
+                <div class="flex justify-between p-[10px] items-center w-full">  
+                    <h1 class="text-white font-medium text-[18px]">Settings background</h1>
+                    <button class="bx bx-x text-[25px] text-white close-cog-backgroud" onclick="closeCogBackgroud()"></button>
+                </div>
+
+                <div class="w-full h-[550px] overflow-y-scroll scroll-container p-[10px] border-t-[2px] grid gap-[10px]">
+                    <div class="gallery-item cursor-pointer" onclick="changeBackground('./image/background.jpg')">
+                        <img src="./image/background.jpg" alt="" class="rounded-[5px]">
+                    </div>
+            
+                    <div class="gallery-item cursor-pointer" onclick="changeBackground('./image/background1.jpg')">
+                        <img src="./image/background1.jpg" alt="" class="rounded-[5px]">
+                    </div>
+            
+                    <div class="gallery-item cursor-pointer" onclick="changeBackground('./image/background2.jpg')">
+                        <img src="./image/background2.jpg" alt="" class="rounded-[5px]">
+                    </div>
+                    
+                    <div class="gallery-item cursor-pointer" onclick="changeBackground('./image/background3.jpg')">
+                        <img src="./image/background3.jpg" alt="" class="rounded-[5px]">
+                    </div>
+            
+                    <div class="gallery-item cursor-pointer" onclick="changeBackground('./image/background4.jpg')">
+                        <img src="./image/background4.jpg" alt="" class="rounded-[5px]">
+                    </div>
+            
+                    <div class="gallery-item cursor-pointer" onclick="changeBackground('./image/background5.jpg')">
+                        <img src="./image/background5.jpg" alt="" class="rounded-[5px]">
+                    </div>
+            
+                    <div class="gallery-item cursor-pointer" onclick="changeBackground('./image/background6.jpg')">
+                        <img src="./image/background6.jpg" alt="" class="rounded-[5px]">
+                    </div>
+            
+                    <div class="gallery-item cursor-pointer" onclick="changeBackground('./image/background7.jpg')">
+                        <img src="./image/background7.jpg" alt="" class="rounded-[5px]">
+                    </div>
+
+                    <div class="gallery-item cursor-pointer" onclick="changeBackground('https://i.pinimg.com/originals/66/4d/2a/664d2a0d4145a08503a0acfd5dd8366e.gif?fbclid=IwAR2YL9YK0aAo3b1gAzyDhMxxV3H1ACZgBaChy5i8KmLWwTmETk_obfRUOZ4')">
+                        <img src="https://i.pinimg.com/originals/66/4d/2a/664d2a0d4145a08503a0acfd5dd8366e.gif?fbclid=IwAR2YL9YK0aAo3b1gAzyDhMxxV3H1ACZgBaChy5i8KmLWwTmETk_obfRUOZ4" alt="" class="rounded-[5px]">
+                    </div>
+
+                    <div class="gallery-item cursor-pointer" onclick="changeBackground('./image/background9.jpg')">
+                        <img src="./image/background9.jpg" alt="" class="rounded-[5px]">
+                    </div>
+
+                    <div class="gallery-item cursor-pointer" onclick="changeBackground('./image/background10.jpg')">
+                        <img src="./image/background10.jpg" alt="" class="rounded-[5px]">
+                    </div>
+
+                    <div class="gallery-item cursor-pointer" onclick="changeBackground('./image/background11.jpg')">
+                        <img src="./image/background11.jpg" alt="" class="rounded-[5px]">
+                    </div>
+
+                    <div class="gallery-item cursor-pointer" onclick="changeBackground('./image/background12.jpg')">
+                        <img src="./image/background12.jpg" alt="" class="rounded-[5px]">
+                    </div>
+
+                    <div class="gallery-item cursor-pointer" onclick="changeBackground('./image/background13.jpg')">
+                        <img src="./image/background13.jpg" alt="" class="rounded-[5px]">
+                    </div>
+
+                    <div class="gallery-item cursor-pointer" onclick="changeBackground('./image/background14.jpg')">
+                        <img src="./image/background14.jpg" alt="" class="rounded-[5px]">
+                    </div>
+
+                    <div class="gallery-item cursor-pointer" onclick="changeBackground('./image/background15.jpg')">
+                        <img src="./image/background15.jpg" alt="" class="rounded-[5px]">
+                    </div>
+
+                    <div class="gallery-item cursor-pointer" onclick="changeBackground('./image/background16.jpg')">
+                        <img src="./image/background16.jpg" alt="" class="rounded-[5px]">
+                    </div>
+
+                    <div class="gallery-item cursor-pointer" onclick="changeBackground('./image/background17.jpg')">
+                        <img src="./image/background17.jpg" alt="" class="rounded-[5px]">
+                    </div>
+
+                    <div class="gallery-item cursor-pointer" onclick="changeBackground('./image/background18.jpg')">
+                        <img src="./image/background18.jpg" alt="" class="rounded-[5px]">
+                    </div>
+
+                    <div class="gallery-item cursor-pointer" onclick="changeBackground('./image/background19.jpg')">
+                        <img src="./image/background19.jpg" alt="" class="rounded-[5px]">
+                    </div>
+
+                    <div class="gallery-item cursor-pointer" onclick="changeBackground('./image/background20.jpg')">
+                        <img src="./image/background20.jpg" alt="" class="rounded-[5px]">
+                    </div>
+
+                    <div class="gallery-item cursor-pointer" onclick="changeBackground('./image/background21.jpg')">
+                        <img src="./image/background21.jpg" alt="" class="rounded-[5px]">
+                    </div>
+
+                    <div class="gallery-item cursor-pointer" onclick="changeBackground('./image/background22.jpg')">
+                        <img src="./image/background22.jpg" alt="" class="rounded-[5px]">
+                    </div>
+
+                    <div class="gallery-item cursor-pointer" onclick="changeBackground('./image/background23.jpg')">
+                        <img src="./image/background23.jpg" alt="" class="rounded-[5px]">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <audio id="musicPlayer" controls class="hidden"></audio>
+
+        <div class="w-full justify-center items-center cog-list hidden">
+            <div class="bg-slate-700 w-[400px] h-[600px] max-sm:w-[350px] absolute top-[100px] rounded-[10px] grid">
+                <div class="flex justify-between p-[10px] items-center w-full">  
+                    <h1 class="text-white font-medium text-[18px]">Music playlist</h1>
+                    <button class="bx bx-x text-[25px] text-white close-cog-list" onclick="closeCogList()"></button>
+                </div>
+
+                <div class="w-full h-[550px] overflow-y-scroll scroll-container p-[10px] border-t-[2px]">
+                    <h1 class="pb-[10px] text-orange-300 font-medium w-fit">Music Korean <div class="w-[70%] h-[4px] bg-white"></div></h1>
+
+                    <div class="flex items-center gap-[10px] text-white cursor-pointer hover:bg-slate-600 p-[10px] rounded-[10px]" onclick="playMusic(this)" data-audio-src="./audio/goodbye.mp3">
+                        <img src="./image/goodbye.jpg" alt="" class="w-[50x] h-[50px] rounded-full">
+
+                        <div>
+                            <h1 class="font-medium">Goodbye</h1>
+                            <span class="text-blue-500 text-[14px] font-medium">DIA</span>
+                        </div>
+                    </div>
+
+                    <h1 class="pb-[10px] text-orange-300 font-medium w-fit">Music Viet Nam <div class="w-[70%] h-[4px] bg-white"></div></h1>
+
+                    <div class="flex items-center gap-[10px] text-white cursor-pointer hover:bg-slate-600 p-[10px] rounded-[10px]" onclick="playMusic(this)" data-audio-src="./audio/roiseonthoima.mp3">
+                        <img src="./image/roiseoncathoima.jpg" alt="" class="w-[50x] h-[50px] rounded-full">
+
+                        <div>
+                            <h1 class="font-medium">Rồi Sẽ Ổn Cả Thôi Mà</h1>
+                            <span class="text-blue-500 text-[14px] font-medium">Hứa Kim Tuyền</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-[10px] text-white cursor-pointer hover:bg-slate-600 p-[10px] rounded-[10px]" onclick="playMusic(this)" data-audio-src="./audio/anhdalonhonthenhieu.mp3">
+                        <img src="./image/anhdalonhonthenhieu.jpg" alt="" class="w-[50x] h-[50px] rounded-full">
+
+                        <div>
+                            <h1 class="font-medium">Anh Đã Lớn Hơn Thế Nhiều</h1>
+                            <span class="text-blue-500 text-[14px] font-medium">Dick ft. Michelle Ngn</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-[10px] text-white cursor-pointer hover:bg-slate-600 p-[10px] rounded-[10px]" onclick="playMusic(this)" data-audio-src="./audio/giuadailodongtay.mp3">
+                        <img src="./image/giuadailodongtay.jpg" alt="" class="w-[50x] h-[50px] rounded-full">
+
+                        <div>
+                            <h1 class="font-medium">Giữa Đại Lộ Đông Tây</h1>
+                            <span class="text-blue-500 text-[14px] font-medium">Uyên Linh</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-[10px] text-white cursor-pointer hover:bg-slate-600 p-[10px] rounded-[10px]" onclick="playMusic(this)" data-audio-src="./audio/henmotmai.mp3">
+                        <img src="./image/henmotmai.jpg" alt="" class="w-[50x] h-[50px] rounded-full">
+    
+                        <div>
+                            <h1 class="font-medium">Hẹn Một Mai</h1>
+                            <span class="text-blue-500 text-[14px] font-medium">Bùi Anh Tuấn</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-[10px] text-white cursor-pointer hover:bg-slate-600 p-[10px] rounded-[10px]" onclick="playMusic(this)" data-audio-src="./audio/thangtuloinoidoicuaem.mp3">
+                        <img src="./image/thangtulaloinoidoicuaem.jpg" alt="" class="w-[50x] h-[50px] rounded-full">
+    
+                        <div>
+                            <h1 class="font-medium">Tháng Tư Là Lời Nói Dối Của Em</h1>
+                            <span class="text-blue-500 text-[14px] font-medium">Hà Anh Tuấn</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-[10px] text-white cursor-pointer hover:bg-slate-600 p-[10px] rounded-[10px]" onclick="playMusic(this)" data-audio-src="./audio/saigontoimua.mp3">
+                        <img src="./image/saigontoimua.jpg" alt="" class="w-[50x] h-[50px] rounded-full">
+    
+                        <div>
+                            <h1 class="font-medium">Sài Gòn Tôi Mưa</h1>
+                            <span class="text-blue-500 text-[14px] font-medium">Tuyên - MC Goku</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-[10px] text-white cursor-pointer hover:bg-slate-600 p-[10px] rounded-[10px]" onclick="playMusic(this)" data-audio-src="./audio/thuantheoytroi.mp3">
+                        <img src="./image/thuantheoytroi.jpg" alt="" class="w-[50x] h-[50px] rounded-full">
+    
+                        <div>
+                            <h1 class="font-medium">Thuận Theo Ý Trời</h1>
+                            <span class="text-blue-500 text-[14px] font-medium">Bùi Anh Tuấn</span>
+                        </div>
+                    </div>
+
+                    <h1 class="pb-[10px] text-orange-300 font-medium w-fit">Music China <div class="w-[70%] h-[4px] bg-white"></div></h1>
+
+                    <div class="flex items-center gap-[10px] text-white cursor-pointer hover:bg-slate-600 p-[10px] rounded-[10px]" onclick="playMusic(this)" data-audio-src="./audio/nguoikenhiem.mp3">
+                        <img src="./image/nguoikenhiem.jpg" alt="" class="w-[50x] h-[50px] rounded-full">
+    
+                        <div>
+                            <h1 class="font-medium">Người Kế Nhiệm - 继者</h1>
+                            <span class="text-blue-500 text-[14px] font-medium">Nhậm Nhiên</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-[10px] text-white cursor-pointer hover:bg-slate-600 p-[10px] rounded-[10px]" onclick="playMusic(this)" data-audio-src="./audio/phidieuvavesau.mp3">
+                        <img src="./image/phidieuvavesau.jpg" alt="" class="w-[50x] h-[50px] rounded-full">
+    
+                        <div>
+                            <h1 class="font-medium">Phi Điểu Và Ve Sầu - 飞鸟和蝉</h1>
+                            <span class="text-blue-500 text-[14px] font-medium">Nhậm Nhiên</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-[10px] text-white cursor-pointer hover:bg-slate-600 p-[10px] rounded-[10px]" onclick="playMusic(this)" data-audio-src="./audio/daokhongnguoi.mp3">
+                        <img src="./image/daokhongnguoi.jpg" alt="" class="w-[50x] h-[50px] rounded-full">
+    
+                        <div>
+                            <h1 class="font-medium">Đảo Không Người - 无人之岛</h1>
+                            <span class="text-blue-500 text-[14px] font-medium">Nhậm Nhiên</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-[10px] text-white cursor-pointer hover:bg-slate-600 p-[10px] rounded-[10px]" onclick="playMusic(this)" data-audio-src="./audio/danhmatem.mp3">
+                        <img src="./image/danhmatem.jpg" alt="" class="w-[50x] h-[50px] rounded-full">
+    
+                        <div>
+                            <h1 class="font-medium">Đánh Mất Em - 丢了你</h1>
+                            <span class="text-blue-500 text-[14px] font-medium">Tỉnh Lung</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-[10px] text-white cursor-pointer hover:bg-slate-600 p-[10px] rounded-[10px]" onclick="playMusic(this)" data-audio-src="./audio/forya.mp3">
+                        <img src="./image/forya.jpg" alt="" class="w-[50x] h-[50px] rounded-full">
+    
+                        <div>
+                            <h1 class="font-medium">For ya</h1>
+                            <span class="text-blue-500 text-[14px] font-medium">Tưởng Tiểu Ni</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-[10px] text-white cursor-pointer hover:bg-slate-600 p-[10px] rounded-[10px]" onclick="playMusic(this)" data-audio-src="./audio/thoikhongsailech.mp3">
+                        <img src="./image/thoikhongsailech.jpg" alt="" class="w-[50x] h-[50px] rounded-full">
+    
+                        <div>
+                            <h1 class="font-medium">Thời Không Sai Lệch - 错位时空</h1>
+                            <span class="text-blue-500 text-[14px] font-medium">Ngải Thần</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-[10px] text-white cursor-pointer hover:bg-slate-600 p-[10px] rounded-[10px]" onclick="playMusic(this)" data-audio-src="./audio/daithienbong.mp3">
+                        <img src="./image/daithienbong.jpg" alt="" class="w-[50x] h-[50px] rounded-full">
+    
+                        <div>
+                            <h1 class="font-medium">Đại Thiên Bồng - 大天篷</h1>
+                            <span class="text-blue-500 text-[14px] font-medium">Lộ Gia</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-[10px] text-white cursor-pointer hover:bg-slate-600 p-[10px] rounded-[10px]" onclick="playMusic(this)" data-audio-src="./audio/cothehaykhong.mp3">
+                        <img src="./image/cothehaykhong.jpg" alt="" class="w-[50x] h-[50px] rounded-full">
+    
+                        <div>
+                            <h1 class="font-medium">Có Thể Hay Không - 可不可以</h1>
+                            <span class="text-blue-500 text-[14px] font-medium">Trương Tử Hào</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-[10px] text-white cursor-pointer hover:bg-slate-600 p-[10px] rounded-[10px]" onclick="playMusic(this)" data-audio-src="./audio/giaycaogotmaudo.mp3">
+                        <img src="./image/giaycaogotmaudo.jpg" alt="" class="w-[50x] h-[50px] rounded-full">
+    
+                        <div>
+                            <h1 class="font-medium">Giày Cao Gót Màu Đỏ - 红色高跟鞋</h1>
+                            <span class="text-blue-500 text-[14px] font-medium">Luân Tang</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-[10px] text-white cursor-pointer hover:bg-slate-600 p-[10px] rounded-[10px]" onclick="playMusic(this)" data-audio-src="./audio/vaygiu.mp3">
+                        <img src="./image/vaygiu.jpg" alt="" class="w-[50x] h-[50px] rounded-full">
+    
+                        <div>
+                            <h1 class="font-medium">Vây Giữ - 沦陷</h1>
+                            <span class="text-blue-500 text-[14px] font-medium">Vương Tĩnh Văn</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-[10px] text-white cursor-pointer hover:bg-slate-600 p-[10px] rounded-[10px]" onclick="playMusic(this)" data-audio-src="./audio/emcuasaunayseodau.mp3">
+                        <img src="./image/emcuasaunayseodau.jpg" alt="" class="w-[50x] h-[50px] rounded-full">
+    
+                        <div>
+                            <h1 class="font-medium">Em Của Sau Này Sẽ Ở Đâu</h1>
+                            <span class="text-blue-500 text-[14px] font-medium">Trạch Thụ</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-[10px] text-white cursor-pointer hover:bg-slate-600 p-[10px] rounded-[10px]" onclick="playMusic(this)" data-audio-src="./audio/kieungao.mp3">
+                        <img src="./image/kieungao.jpg" alt="" class="w-[50x] h-[50px] rounded-full">
+    
+                        <div>
+                            <h1 class="font-medium">Kiêu Ngạo - 嚣张</h1>
+                            <span class="text-blue-500 text-[14px] font-medium">En</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-[10px] text-white cursor-pointer hover:bg-slate-600 p-[10px] rounded-[10px]" onclick="playMusic(this)" data-audio-src="./audio/xoadi.mp3">
+                        <img src="./image/xoadi.jpg" alt="" class="w-[50x] h-[50px] rounded-full">
+    
+                        <div>
+                            <h1 class="font-medium">Xóa đi - Yên - 删了吧 - 烟</h1>
+                            <span class="text-blue-500 text-[14px] font-medium">Hứa Gia Hào</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-[10px] text-white cursor-pointer hover:bg-slate-600 p-[10px] rounded-[10px]" onclick="playMusic(this)" data-audio-src="./audio/daudaucunglaem.mp3">
+                        <img src="./image/daudaucunglaem.jpg" alt="" class="w-[50x] h-[50px] rounded-full">
+    
+                        <div>
+                            <h1 class="font-medium">Đâu Đâu Cũng Là Em - 哪里都是你</h1>
+                            <span class="text-blue-500 text-[14px] font-medium">YoungCaptain</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-[10px] text-white cursor-pointer hover:bg-slate-600 p-[10px] rounded-[10px]" onclick="playMusic(this)" data-audio-src="./audio/thieunien.mp3">
+                        <img src="./image/thieunien.jpg" alt="" class="w-[50x] h-[50px] rounded-full">
+    
+                        <div>
+                            <h1 class="font-medium">Thiếu Niên - 少年</h1>
+                            <span class="text-blue-500 text-[14px] font-medium">Mộng Nhiên</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-[10px] text-white cursor-pointer hover:bg-slate-600 p-[10px] rounded-[10px]" onclick="playMusic(this)" data-audio-src="./audio/nguoitungyeu.mp3">
+                        <img src="./image/nguoitungyeu.jpg" alt="" class="w-[50x] h-[50px] rounded-full">
+    
+                        <div>
+                            <h1 class="font-medium">Người Từng Yêu - 爱过的人</h1>
+                            <span class="text-blue-500 text-[14px] font-medium">Nhậm Nhiên</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-[10px] text-white cursor-pointer hover:bg-slate-600 p-[10px] rounded-[10px]" onclick="playMusic(this)" data-audio-src="./audio/mayman.mp3">
+                        <img src="./image/mayman.jpg" alt="" class="w-[50x] h-[50px] rounded-full">
+    
+                        <div>
+                            <h1 class="font-medium">May Mắn - 有幸</h1>
+                            <span class="text-blue-500 text-[14px] font-medium">Nhậm Nhiên</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-[10px] text-white cursor-pointer hover:bg-slate-600 p-[10px] rounded-[10px]" onclick="playMusic(this)" data-audio-src="./audio/motbuocxaxoi.mp3">
+                        <img src="./image/motbuocxaxoi.jpg" alt="" class="w-[50x] h-[50px] rounded-full">
+    
+                        <div>
+                            <h1 class="font-medium">Một Bước Xa Xôi - 步之遥</h1>
+                            <span class="text-blue-500 text-[14px] font-medium">Nhậm Nhiên</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-[10px] text-white cursor-pointer hover:bg-slate-600 p-[10px] rounded-[10px]" onclick="playMusic(this)" data-audio-src="./audio/daingu.mp3">
+                        <img src="./image/daingu.jpg" alt="" class="w-[50x] h-[50px] rounded-full">
+    
+                        <div>
+                            <h1 class="font-medium">Đại Ngư - 大鱼</h1>
+                            <span class="text-blue-500 text-[14px] font-medium">Châu Thâm</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-[10px] text-white cursor-pointer hover:bg-slate-600 p-[10px] rounded-[10px]" onclick="playMusic(this)" data-audio-src="./audio/huongcuaanhsang.mp3">
+                        <img src="./image/huongcuaanhsang.jpg" alt="" class="w-[50x] h-[50px] rounded-full">
+    
+                        <div>
+                            <h1 class="font-medium">Hướng Của Ánh Sáng - 光的方向</h1>
+                            <span class="text-blue-500 text-[14px] font-medium">Trương Bích Thần</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-full justify-center items-center hidden cog-user">
+            <div class="bg-slate-700 w-[400px] max-sm:w-[350px] h-[600px] absolute top-[100px] rounded-[10px] grid">
+                <div class="flex justify-between p-[10px] items-center w-full">  
+                    <h1 class="text-white font-medium text-[18px]">Infomation users</h1>
+                    <button class="bx bx-x text-[25px] text-white close-cog-user" onclick="closeCogUser()"></button>
+                </div>
+
+                <div class="w-full h-[550px] overflow-y-scroll scroll-container p-[10px] border-t-[2px] cursor-pointer">
+                    <a href="https://www.facebook.com/profile.php?id=100016676058653">
+                        <div class="flex gap-[10px] items-center cursor-pointer">
+                            <div class="border-[2px] border-blue-500 p-[5px] rounded-full flex items-center justify-center">
+                                <img src="./image/jang.jpg" class="rounded-full w-[60px] h-[60px]" alt="">
+                            </div>
+                
+                            <div>
+                                <h1 class="text-white font-medium">Yang Yang</h1>
+                                <div class="flex items-center text-white gap-[5px]">
+                                    <span>Instagram:</span>
+                                    <p>yangyang_2106</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <div class="text-white flex items-center mt-[10px]">
+                        <span class="text-orange-300 w-[30%] font-medium">Full name: </span>
+                        <h1 class="font-medium w-[70%]">Le Hoa Giang</h1>
+                    </div>
+
+                    <div class="text-white flex items-center mt-[10px]">
+                        <span class="text-orange-300 w-[30%] font-medium">Birth day: </span>
+                        <h1 class="font-medium w-[70%]">21-06-2004</h1>
+                    </div>
+
+                    <div class="text-white flex items-center mt-[10px]">
+                        <span class="text-orange-300 w-[30%] font-medium">Tele phone: </span>
+                        <h1 class="font-medium w-[70%]">+84 392 59 2098</h1>
+                    </div>
+
+                    <div class="text-white flex items-center mt-[10px]">
+                        <span class="text-orange-300 w-[30%] font-medium">Education: </span>
+                        <h1 class="font-medium w-[70%]">Vietnam - Korea University of Information and Communication Technology, University of Danang.</h1>
+                    </div>
+
+                    <div class="text-white flex items-center mt-[10px]">
+                        <span class="text-orange-300 w-[30%] font-medium">Lives in: </span>
+                        <h1 class="font-medium w-[70%]">Da Nang, Vietnam.</h1>
+                    </div>
+
+                    <div class="text-white flex items-center mt-[10px]">
+                        <span class="text-orange-300 w-[30%] font-medium">From: </span>
+                        <h1 class="font-medium w-[70%]">Dai Loc - Quang Nam - Viet Nam.</h1>
+                    </div>
+
+                    <div class="text-white flex items-center mt-[10px]">
+                        <span class="text-orange-300 w-[30%] font-medium">Hobbies: </span>
+                        <h1 class="font-medium w-[70%]">Take a photo, Cooking, Listening to music, Travel.</h1>
+                    </div>
+
+                    <div class="mt-[20px] grid gap-[10px]">
+                        <img src="./image/des1.jpg" alt="" class="rounded-[5px]">
+                        <img src="./image/des2.jpg" alt="" class="rounded-[5px]">
+                        <img src="./image/des3.jpg" alt="" class="rounded-[5px]">   
+                    </div>
+
+                    <div class="mt-[10px]">
+                        <p class="text-white font-medium">"Just be yourself, because life’s too short to be anybody else." - Film “Step Up 2: The Streets”</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex max-sm:grid max-sm:h-max max-sm:gap-[10px] max-sm:mb-[50px] max-sm:mt-[88px] items-center p-[10px] h-[50px] bg-slate-700 mx-[50px] rounded-[10px] cursor-pointer justify-between">
+            <div class="flex items-center gap-[10px]">
+                <p id="dark-light"></p>
+                <h1 class="font-medium text-white currentTime"></h1>
+            </div>
+
+            <div class="flex items-center gap-[10px]">
+                <i class='bx bxs-skip-previous-circle text-[30px] text-white' id="next-music"></i>
+                <i class='bx bx-play-circle text-[30px] text-white' id="playPauseButton"></i>
+                <i class='bx bxs-skip-next-circle text-[30px] text-white' id="pre-music"></i>
+                <i class='bx bx-rotate-right text-[30px] text-white' id="repeat-music" ></i>
+                <i class='bx bx-volume-full text-[30px] text-white' id="plus-volume"></i>
+                <i class='bx bx-volume-mute text-[30px] text-white' id="mute-volume"></i>
+            </div>
+
+            <div class="flex items-center gap-[10px]">
+                <button class="show-cog-list border-[2px] rounded-full p-[5px] flex items-center justify-center" onclick="toggleCogList()">
+                    <i class='bx bxs-playlist text-[25px] text-white cursor-pointer'></i>
+                </button>
+
+                <button class="show-cog-user border-[2px] rounded-full p-[5px] flex items-center justify-center" onclick="toggleCogUser()">
+                    <i class='bx bx-user text-[25px] text-white cursor-pointer'></i>
+                </button>
+
+                <button class="show-cog-backgroud border-[2px] rounded-full p-[5px] flex items-center justify-center" onclick="toggleCogBackgroud()">
+                    <i class='bx bx-image text-[25px] text-white cursor-pointer'></i>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <script src="./js/time.js"></script>
+    <script src="./js/cog.js"></script>
+    <script src="./js/swiper.js"></script>
+    <script src="./js/music.js"></script>
+</body>
+</html>

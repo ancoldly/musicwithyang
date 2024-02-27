@@ -1,0 +1,55 @@
+body {
+  background-image: url(../image/background.jpg);
+}
+
+.scrolling-text {
+  margin: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: type 2s steps(40) infinite;
+}
+
+@keyframes type {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.animate-border {
+  animation: border 2.2s linear infinite !important;
+  border: 3px solid transparent;
+}
+
+@keyframes border {
+  0% {
+    border-color: #ff79c6;
+  }
+  25% {
+    border-color: #bd93f9;
+  }
+  50% {
+    border-color: #8be9fd;
+  }
+  75% {
+    border-color: #ffb86c;
+  }
+  100% {
+    border-color: #ff79c6;
+  }
+}
+
+#image-music {
+  animation: rotate 5s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
